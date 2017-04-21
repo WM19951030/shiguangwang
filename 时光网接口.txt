@@ -1,0 +1,23 @@
+
+1、 电影商城、头部轮播、广告图标
+
+ http://comm-api.m.mtime.cn/home/index.api
+
+2、 电影列表
+
+http://api.m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=598
+
+3、时光精选
+
+http://api.m.mtime.cn/PageSubArea/GetHomeFeed.api?pageIndex=2
+
+4、电影列表：正在热映
+http://api.m.mtime.cn/Showtime/LocationMovies.api?locationId=598
+
+
+三、商城
+
+http://mall-api.m.mtime.cn/mall/index.api
+
+商品列表：
+http://api.m.mtime.cn/ECommerce/RecommendProducts.api?goodsIds=101285&pageIndex=1

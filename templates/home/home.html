@@ -1,0 +1,139 @@
+<ion-view title="首页">
+  <ion-content>
+    <!--没有数据时的界面-->
+    <div ng-if="loadding">
+        <ion-spinner icon="lines"></ion-spinner>
+    </div>
+
+    <!--数据请求成功的界面-->
+    <div ng-if="!loadding">
+
+      <!--下拉刷新-->
+      <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()">
+
+      </ion-refresher>
+      <!--轮播图-->
+      <ion-slide-box
+        slide-interval="1000"
+        does-continue="true"
+        auto-play="true">
+        <ion-slide ng-repeat="p in  data.data.topPosters"
+                   class="poster">
+          <img src="{{p.img}}" alt="">
+        </ion-slide>
+      </ion-slide-box>
+      <!--文本 售票地址-->
+      <div class="home-location padding">
+        <span>正在售票:石景山
+          <i class="icon ion-ios-arrow-down"></i>
+        </span>
+        <span style="float: right;color:orange;">共40部
+          <i class="icon ion-ios-arrow-right"></i>
+        </span>
+      </div>
+      <!--横线滑动的电影信息-->
+      <ion-scroll direction="x">
+          <ul class="home-movie-list">
+            <li ng-repeat="m in movies"
+            class="home-movie-item">
+              <img ng-src="{{m.img}}" alt="">
+              <span ng-bind="m.titleCn" class="padding"></span>
+              <a href="">购票</a>
+            </li>
+          </ul>
+      </ion-scroll>
+
+      <!--文本 即将上映  ionic 栅格系统-->
+      <div class="row home-movie-cc">
+        <div class="col-50">
+          即将上映
+          <span class="num">.41部
+          <i class="icon ion-ios-arrow-right"></i>
+          </span>
+        </div>
+
+        <div class="col-50">
+          同城影院
+          <span class="num">.191家
+          <i class="icon ion-ios-arrow-right"></i>
+          </span>
+        </div>
+      </div>
+      <!--分割-->
+      <div class="home-divide">
+      </div>
+
+      <div class="home-location padding">
+        <span>电影商城
+          <i class="icon ion-ios-arrow-down"></i>
+        </span>
+        <span style="float: right;color:orange;">全部商品
+          <i class="icon ion-ios-arrow-right"></i>
+        </span>
+      </div>
+
+      <div class="home-mall-row1">
+        <!--4个 不同的样式位置-->
+        <div ng-repeat="p in data.data.mallRecommends | limitTo:4"
+        style="background: url({{p.image}}) no-repeat;
+        background-size: contain">
+          <!--<img src="{{p.image}}" alt="">-->
+        </div>
+      </div>
+      <div class="home-mall-row2">
+        <!--2个 不同的样式位置-->
+        <div ng-repeat="p in data.data.mallRecommends | limitTo:2:4"
+             style="background: url({{p.image}}) no-repeat;
+        background-size: contain">
+          <p>你好</p>
+          <!--<img src="{{p.image}}" alt="">-->
+        </div>
+      </div>
+
+      <div class="home-divide"></div>
+      <div class="home-location padding">
+        <span>时光精选
+          <i class="icon ion-ios-arrow-down"></i>
+        </span>
+        <span style="float: right;color:orange;">全部
+          <i class="icon ion-ios-arrow-right"></i>
+        </span>
+      </div>
+      <ion-list>
+        <!--列表每一项-->
+        <div ng-repeat="n in news">
+          <!--简讯-->
+          <div class="item" ng-if="n.tag=='简讯'||n.tag =='影评'">
+            <!--userImage summaryInfo-->
+            <img src="{{n.img1||n.userImage}}" class="home-img">
+            <span class="home-tag">{{n.tag}}</span>
+            <h1 class="home-p1">{{n.title}}</h1>
+            <h2 class="home-p2">{{n.content||n.summaryInfo}}</h2>
+          </div>
+
+          <div class="item home-imgs" ng-if="n.tag=='图集'">
+            <span class="home-tag">{{n.tag}}</span>
+            <h1 class="home-p1">{{n.title}}</h1>
+            <h2 class="home-p2">{{n.content}}</h2>
+            <img src="{{n.img1}}" alt="">
+            <img src="{{n.img2}}" alt="">
+            <img src="{{n.img3}}" alt="">
+          </div>
+
+        </div>
+      </ion-list>
+
+    </div>
+
+    <!--滚动刷新-->
+    <ion-infinite-scroll
+      on-infinite="loadMore()"
+      distance="1%"
+    >
+    </ion-infinite-scroll>
+
+
+  </ion-content>
+</ion-view>

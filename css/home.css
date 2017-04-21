@@ -1,0 +1,157 @@
+/* Empty. Add your own CSS if you like */
+.poster{
+  height: 200px;
+}
+.poster img{
+  /*height: 200px;*/
+  height: 100%;
+  width: 100%;
+}
+.slider-pager .slider-pager-page{
+  color: white;
+  font-size: 15px;
+}
+/*<!--文本 售票地址-->*/
+.home-location{
+  font-size: 20px;
+}
+/*横线滑动的电影信息-*/
+.home-movie-list{
+  /*内容最大是多少 我就是多宽*/
+  width: max-content;
+}
+.home-movie-item{
+  float: left;
+  margin-left: 10px;
+  /*图片 标题 按钮   不使用定位*/
+  /*分栏布局*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.home-movie-list .home-movie-item img{
+  width: 100px;
+  height: 150px;
+}
+.home-movie-item span{
+  display: inline-block;
+  height: 30px;
+}
+.home-movie-item a{
+  color: white;
+  background: orange;
+
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+/*即将上映 同城影院*/
+.home-movie-cc{
+  margin-top: 10px;
+
+  height: 50px;
+  padding: 16px 20px;
+  font-size: 18px;
+  border-top:1px solid lightgray;
+  border-bottom:1px solid lightgray;
+}
+
+.num{
+  font-size: 15px;
+  color: gray;
+}
+/*分割 空白*/
+.home-divide{
+  height: 10px;
+  background: whitesmoke;
+}
+/*矩形第一行*/
+.home-mall-row1{
+  height: 200px;
+  border-top: 1px solid lightgray;
+}
+.home-mall-row1 div:nth-child(1){
+  height: 100%;
+  width: 33%;
+  float: left;
+  border-right: 1px solid lightgray;
+}
+.home-mall-row1 div:nth-child(2){
+  height: 40%;
+  width: 67%;
+  float: left;
+  border-bottom: 1px solid lightgray;
+}
+.home-mall-row1 div:nth-child(3){
+  height: 60%;
+  width: 33.5%;
+  float: left;
+  border-right: 1px solid lightgray;
+}
+.home-mall-row1 div:nth-child(4){
+  height: 60%;
+  width: 33.5%;
+  float: left;
+}
+/*第2行*/
+.home-mall-row2{
+  height: 100px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.home-mall-row2 div:nth-child(1){
+  height: 100%;
+  width: 33%;
+  float: left;
+  border-right: 1px solid lightgray;
+}
+.home-mall-row2 div:nth-child(2){
+  height: 100%;
+  width: 67%;
+  float: left;
+}
+/*简讯*/
+.home-img{
+  float: right;
+  width: 100px;
+  height: 100px;
+}
+.home-tag{
+  color: white;
+  background: #4b8bf4;
+}
+.home-p1{
+  font-size: 20px;
+  color: black;
+}
+.home-p2{
+  font-size: 16px;
+  color: gray;
+}
+/*图集*/
+.home-imgs img:nth-child(4){
+  width: 70%;
+  height: 210px;
+  float: left;
+  margin-right: 2%;
+  /*62 38*/
+}
+.home-imgs img:nth-child(5){
+  float: left;
+  width: 28%;
+  height: 100px;
+  margin-bottom: 10px;
+
+}
+.home-imgs img:nth-child(6){
+  float: left;
+  width: 28%;
+  height: 100px;
+
+}
+
